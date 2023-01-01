@@ -238,6 +238,17 @@
           "customInputs": [],
           "customOutputs": [],
           "value": "true"
+        },
+        {
+          "objID": "7b9cb109-43da-46fe-9dd9-dd0405905bcd",
+          "type": "WatchVariableActionComponent",
+          "left": -124,
+          "top": 58,
+          "width": 91,
+          "height": 54,
+          "customInputs": [],
+          "customOutputs": [],
+          "variable": "wd"
         }
       ],
       "connectionLines": [
@@ -245,6 +256,13 @@
           "objID": "fb92db38-59ae-4814-865b-17d68691fd9d",
           "source": "f698f14f-13a7-4441-95e3-a3819916716f",
           "output": "value",
+          "target": "db507afe-dbc3-471a-83ba-682a1e30ffc6",
+          "input": "in"
+        },
+        {
+          "objID": "d6e51f63-3527-45dd-ffbe-ee461a50fd6b",
+          "source": "7b9cb109-43da-46fe-9dd9-dd0405905bcd",
+          "output": "variable",
           "target": "db507afe-dbc3-471a-83ba-682a1e30ffc6",
           "input": "in"
         }

@@ -4,3 +4,5 @@
 .vscode/launch.json
 .vscode/ipch
 watchtest.eez-project-ui-state
+watchtest-notworking.eez-project-ui-state
+.DS_Store
