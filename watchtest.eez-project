@@ -102,7 +102,7 @@
         "objID": "dd4a71e1-deaa-453d-a9a5-1f1c68cbfdff",
         "name": "wd",
         "type": "boolean",
-        "defaultValue": "false",
+        "defaultValue": "true",
         "persistent": false,
         "native": true
       }
@@ -116,54 +116,11 @@
       "objID": "4b40eba7-b31a-468a-b887-11dfd0b6637f",
       "components": [
         {
-          "objID": "6b272cb8-48b4-467f-c130-a1edc1f930b7",
-          "type": "LVGLLabelWidget",
-          "left": 110,
-          "top": 112,
-          "width": 101,
-          "height": 16,
-          "customInputs": [],
-          "customOutputs": [],
-          "style": {
-            "objID": "a9bf737e-205d-4003-aae9-0ca3b6710d43",
-            "inheritFrom": "default"
-          },
-          "timeline": [],
-          "leftUnit": "px",
-          "topUnit": "px",
-          "widthUnit": "content",
-          "heightUnit": "content",
-          "children": [],
-          "flags": "PRESS_LOCK|CLICK_FOCUSABLE|GESTURE_BUBBLE|SNAPPABLE|SCROLLABLE|SCROLL_ELASTIC|SCROLL_MOMENTUM|SCROLL_CHAIN",
-          "hiddenFlagType": "literal",
-          "clickableFlagType": "literal",
-          "scrollbarMode": "auto",
-          "scrollDirection": "all",
-          "checkedStateType": "literal",
-          "disabledStateType": "literal",
-          "states": "",
-          "localStyles": {
-            "objID": "b70b99db-02c2-420a-cbdf-e6366dc84e67",
-            "definition": {
-              "MAIN": {
-                "DEFAULT": {
-                  "text_font": "MONTSERRAT_14"
-                }
-              }
-            }
-          },
-          "eventHandlers": [],
-          "text": "\"Hello, world!\"",
-          "textType": "literal",
-          "longMode": "WRAP",
-          "recolor": false
-        },
-        {
           "objID": "133949e1-633d-46c9-cbff-5adf4546c84e",
           "type": "LVGLCheckboxWidget",
-          "left": 277,
-          "top": 210,
-          "width": 31,
+          "left": 129,
+          "top": 204,
+          "width": 125,
           "height": 20,
           "customInputs": [],
           "customOutputs": [],
@@ -191,10 +148,125 @@
             "objID": "a7d6db91-f07d-4170-eb59-654af66ce9a8"
           },
           "eventHandlers": [],
-          "text": " "
+          "text": " direct var"
+        },
+        {
+          "objID": "ec7dc6df-1e6f-4566-eb00-36b9fd41b96e",
+          "type": "LVGLLabelWidget",
+          "left": 110,
+          "top": 172,
+          "width": 115,
+          "height": 16,
+          "customInputs": [],
+          "customOutputs": [],
+          "style": {
+            "objID": "14cbcaaa-8a0f-40ca-b75f-8374d36e17f8",
+            "inheritFrom": "default"
+          },
+          "timeline": [],
+          "leftUnit": "px",
+          "topUnit": "px",
+          "widthUnit": "content",
+          "heightUnit": "content",
+          "children": [],
+          "flags": "PRESS_LOCK|CLICK_FOCUSABLE|GESTURE_BUBBLE|SNAPPABLE|SCROLLABLE|SCROLL_ELASTIC|SCROLL_MOMENTUM|SCROLL_CHAIN",
+          "hiddenFlagType": "literal",
+          "clickableFlagType": "literal",
+          "scrollbarMode": "auto",
+          "scrollDirection": "all",
+          "checkedStateType": "literal",
+          "disabledStateType": "literal",
+          "states": "",
+          "localStyles": {
+            "objID": "cc474a90-7e32-42a8-d244-92f8f31889d2"
+          },
+          "eventHandlers": [],
+          "text": "\"wd var: \" + wd",
+          "textType": "expression",
+          "longMode": "WRAP",
+          "recolor": false
+        },
+        {
+          "objID": "db507afe-dbc3-471a-83ba-682a1e30ffc6",
+          "type": "LVGLLabelWidget",
+          "left": 110,
+          "top": 134,
+          "width": 157,
+          "height": 16,
+          "customInputs": [
+            {
+              "objID": "39251f3a-caa8-4832-af59-815b67cedd7f",
+              "name": "in",
+              "type": "boolean"
+            }
+          ],
+          "customOutputs": [],
+          "style": {
+            "objID": "3b02d68e-805b-411b-c83b-21454151306a",
+            "inheritFrom": "default"
+          },
+          "timeline": [],
+          "leftUnit": "px",
+          "topUnit": "px",
+          "widthUnit": "content",
+          "heightUnit": "content",
+          "children": [],
+          "flags": "PRESS_LOCK|CLICK_FOCUSABLE|GESTURE_BUBBLE|SNAPPABLE|SCROLLABLE|SCROLL_ELASTIC|SCROLL_MOMENTUM|SCROLL_CHAIN",
+          "hiddenFlagType": "literal",
+          "clickableFlagType": "literal",
+          "scrollbarMode": "auto",
+          "scrollDirection": "all",
+          "checkedStateType": "literal",
+          "disabledStateType": "literal",
+          "states": "",
+          "localStyles": {
+            "objID": "db7a9e12-a9a3-41e1-fb93-b8fb2d58a308"
+          },
+          "eventHandlers": [],
+          "text": "\"input (watch): \" + in",
+          "textType": "expression",
+          "longMode": "WRAP",
+          "recolor": false
+        },
+        {
+          "objID": "f698f14f-13a7-4441-95e3-a3819916716f",
+          "type": "ConstantActionComponent",
+          "left": -124,
+          "top": 162,
+          "width": 88,
+          "height": 52,
+          "customInputs": [],
+          "customOutputs": [],
+          "value": "true"
+        },
+        {
+          "objID": "3b036b36-56a3-4b4a-dde5-accd44353e88",
+          "type": "WatchVariableActionComponent",
+          "left": -123,
+          "top": 68,
+          "width": 91,
+          "height": 54,
+          "customInputs": [],
+          "customOutputs": [],
+          "variable": "wd"
         }
       ],
-      "connectionLines": [],
+      "connectionLines": [
+        {
+          "objID": "fb92db38-59ae-4814-865b-17d68691fd9d",
+          "source": "f698f14f-13a7-4441-95e3-a3819916716f",
+          "output": "value",
+          "target": "db507afe-dbc3-471a-83ba-682a1e30ffc6",
+          "input": "in"
+        },
+        {
+          "objID": "eaa3711c-4149-4219-91a6-8c9169dff41c",
+          "source": "3b036b36-56a3-4b4a-dde5-accd44353e88",
+          "output": "variable",
+          "target": "db507afe-dbc3-471a-83ba-682a1e30ffc6",
+          "input": "in"
+        }
+      ],
       "localVariables": [],
       "name": "Main",
       "left": 0,
