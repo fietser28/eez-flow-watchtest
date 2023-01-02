@@ -3,6 +3,7 @@
 #include <FreeRTOS.h>
 #include <semphr.h>
 #include <task.h>
+#include <timers.h>
 #include <lvgl.h>
 #include <TFT_eSPI.h>
 
@@ -12,6 +13,9 @@
 #define MY_LV_TICK_TIME 20
 
 TFT_eSPI tft = TFT_eSPI(); /* TFT instance */
+
+static void guiTimerFunction( TimerHandle_t xTimer );
+static TimerHandle_t guiTimerHandle;
 
 static void guiTask(void *pvParameter);
 TaskHandle_t guiTaskHandle;
@@ -26,8 +30,17 @@ static lv_color_t buf[screenWidth * 10];
 static lv_disp_drv_t disp_drv;
 static lv_indev_drv_t indev_drv;     // Touchscreen
       
+static void guiTimerFunction( TimerHandle_t tm ) {
+  lv_tick_inc(MY_LV_TICK_TIME);
+}
+
 void gui_task_init(void)
 {
+
+  TimerHandle_t gt;
+  guiTimerHandle = xTimerCreate("gut", pdMS_TO_TICKS(MY_LV_TICK_TIME), pdTRUE, NULL, guiTimerFunction);
+
+
   xTaskCreate(guiTask, "gui", 4096 * 2, NULL, 3, &guiTaskHandle);
 
 };
@@ -112,10 +125,12 @@ static void guiTask(void *pvParameter)
       ui_init();
 #endif
 
+  xTimerStart(guiTimerHandle, 0);
+
   while (1)
   {
     vTaskDelay(pdMS_TO_TICKS(MY_LV_TICK_TIME));
-        lv_tick_inc(MY_LV_TICK_TIME);
+//        lv_tick_inc(MY_LV_TICK_TIME);   // Moved to task seperate from ui_tick().
         lv_task_handler();
         ui_tick();
   }
